@@ -1,0 +1,25 @@
+server:
+  #设置端口
+  port: 8080
+
+
+#MyBatis设置
+mybatis:
+  #设置Mapper文件地址
+  mapper-locations: classpath:mapper/*.xml
+  #开启驼峰下划线转换
+  configuration:
+    map-underscore-to-camel-case: true
+
+  #为所有的实体类设置别名
+  type-aliases-package: com.company.join
+
+
+#数据库链接
+spring:
+  #设置数据库连接
+  datasource:
+    username: sa
+    password: Ma123456
+    url: jdbc:sqlserver://localhost
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
