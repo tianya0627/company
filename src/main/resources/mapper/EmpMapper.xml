@@ -11,5 +11,7 @@
             <result property="age" column="age" jdbcType="INTEGER"/>
             <result property="did" column="did" jdbcType="INTEGER"/>
     </resultMap>
+    <select id="getEmpById" resultType="com.company.join.Emp"></select>
+    <select id="getAllEmp" resultType="com.company.join.Emp"></select>
 
 </mapper>

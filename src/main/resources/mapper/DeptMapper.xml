@@ -5,8 +5,17 @@
 <mapper namespace="com.company.mapper.DeptMapper">
 
     <resultMap id="BaseResultMap" type="com.company.join.Dept">
-            <id property="did" column="did" jdbcType="INTEGER"/>
-            <result property="deptName" column="dept_name" jdbcType="VARCHAR"/>
+        <id property="did" column="did" jdbcType="INTEGER"/>
+        <result property="deptName" column="dept_name" jdbcType="VARCHAR"/>
     </resultMap>
+    <select id="getDeptById" resultType="com.company.join.Dept">
+        select did, dept_name
+        from Library.dbo.dept
+        where did = #{did}
+    </select>
+    <select id="getAllDept" resultType="com.company.join.Dept">
+        select did, dept_name
+        from Library.dbo.dept
+    </select>
 
 </mapper>

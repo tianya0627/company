@@ -1,11 +1,14 @@
 package com.company.join;
 
+import org.springframework.stereotype.Component;
+
 import java.io.Serializable;
 
 /**
  * 
  * @TableName emp
  */
+@Component
 public class Emp implements Serializable {
     /**
      * 员工编号

@@ -2,6 +2,9 @@ package com.company.mapper;
 
 import com.company.join.Emp;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 /**
 * @author tiany
@@ -12,6 +15,20 @@ import org.apache.ibatis.annotations.Mapper;
 @Mapper
 public interface EmpMapper {
 
+    /**
+     * 根据ID查询员工
+     *
+     * @param eid 员工编号
+     * @return 员工
+     */
+    Emp getEmpById(@Param("eid") Integer eid);
+
+    /**
+     * 查询所有员工
+     *
+     * @return 所有员工
+     */
+    List<Emp> getAllEmp();
 }
 
 

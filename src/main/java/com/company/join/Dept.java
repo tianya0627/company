@@ -1,11 +1,14 @@
 package com.company.join;
 
+import org.springframework.stereotype.Component;
+
 import java.io.Serializable;
 
 /**
  * 
  * @TableName dept
  */
+@Component
 public class Dept implements Serializable {
     /**
      * 部门id

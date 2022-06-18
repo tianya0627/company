@@ -2,6 +2,9 @@ package com.company.mapper;
 
 import com.company.join.Dept;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 /**
 * @author tiany
@@ -12,6 +15,20 @@ import org.apache.ibatis.annotations.Mapper;
 @Mapper
 public interface DeptMapper {
 
+    /**
+     * 根据ID查询部门
+     *
+     * @param did 部门ID
+     * @return 部门
+     */
+    Dept getDeptById(@Param("did") Integer did);
+
+    /**
+     * 查询所有部门
+     *
+     * @return 所有部门
+     */
+    List<Dept> getAllDept();
 }
 
 
