@@ -27,4 +27,19 @@ public class EmpServiceImp implements EmpService {
     public List<Emp> getAllEmp() {
         return empMapper.getAllEmp();
     }
+
+    @Override
+    public Integer addEmp(Emp emp) {
+        return empMapper.addEmp(emp);
+    }
+
+    @Override
+    public Integer deleteEmpById(Emp emp) {
+        return empMapper.deleteEmpById(emp);
+    }
+
+    @Override
+    public Integer updateEmpById(Emp emp) {
+        return empMapper.updateEmpById(emp);
+    }
 }

@@ -20,4 +20,28 @@ public interface EmpService {
      * @return 所有员工
      */
     List<Emp> getAllEmp();
+
+    /**
+     * 添加员工
+     *
+     * @param emp 需要添加的员工
+     * @return 结果
+     */
+    Integer addEmp(Emp emp);
+
+    /**
+     * 删除员工
+     *
+     * @param emp 需要删除的员工
+     * @return 结果
+     */
+    Integer deleteEmpById(Emp emp);
+
+    /**
+     * 修改员工信息
+     *
+     * @param emp 修改后的信息
+     * @return 结果
+     */
+    Integer updateEmpById(Emp emp);
 }

@@ -8,6 +8,20 @@
         <id property="did" column="did" jdbcType="INTEGER"/>
         <result property="deptName" column="dept_name" jdbcType="VARCHAR"/>
     </resultMap>
+    <insert id="addDept" useGeneratedKeys="true" keyProperty="did">
+        insert into Library.dbo.dept
+        values (#{deptName})
+    </insert>
+    <update id="updateDeptNameById">
+        update Library.dbo.dept
+        set dept_name=#{deptName}
+        where did = #{did}
+    </update>
+    <delete id="deleteDeptById">
+        delete
+        from Library.dbo.dept
+        where did = #{did}
+    </delete>
     <select id="getDeptById" resultType="com.company.join.Dept">
         select did, dept_name
         from Library.dbo.dept

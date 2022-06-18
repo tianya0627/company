@@ -5,13 +5,37 @@
 <mapper namespace="com.company.mapper.EmpMapper">
 
     <resultMap id="BaseResultMap" type="com.company.join.Emp">
-            <id property="eid" column="eid" jdbcType="INTEGER"/>
-            <result property="empName" column="emp_name" jdbcType="VARCHAR"/>
-            <result property="sex" column="sex" jdbcType="VARCHAR"/>
-            <result property="age" column="age" jdbcType="INTEGER"/>
-            <result property="did" column="did" jdbcType="INTEGER"/>
+        <id property="eid" column="eid" jdbcType="INTEGER"/>
+        <result property="empName" column="emp_name" jdbcType="VARCHAR"/>
+        <result property="sex" column="sex" jdbcType="VARCHAR"/>
+        <result property="age" column="age" jdbcType="INTEGER"/>
+        <result property="did" column="did" jdbcType="INTEGER"/>
     </resultMap>
-    <select id="getEmpById" resultType="com.company.join.Emp"></select>
-    <select id="getAllEmp" resultType="com.company.join.Emp"></select>
+    <insert id="addEmp" keyProperty="eid" useGeneratedKeys="true">
+        insert into Library.dbo.emp
+        values (#{empName}, #{sex}, #{age}, #{did})
+    </insert>
+    <update id="updateEmpById">
+        update Library.dbo.emp
+        set emp_name = #{empName},
+            sex      = #{sex},
+            age      = #{age},
+            did      = #{did}
+        where eid = #{eid}
+    </update>
+    <delete id="deleteEmpById">
+        delete
+        from Library.dbo.emp
+        where eid = #{eid}
+    </delete>
+    <select id="getEmpById" resultType="com.company.join.Emp">
+        select eid, emp_name, sex, age, did
+        from Library.dbo.emp
+        where eid = #{eid}
+    </select>
+    <select id="getAllEmp" resultType="com.company.join.Emp">
+        select eid, emp_name, sex, age, did
+        from Library.dbo.emp
+    </select>
 
 </mapper>
